@@ -3,6 +3,7 @@ package com.example.appbmi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         getId();
 
-        if(weight.getText().toString() == null || height.getText().toString() == null) {
+        if(TextUtils.isEmpty(weight.getText().toString().trim()) || TextUtils.isEmpty(height.getText().toString().trim())) {
             Toast.makeText(this, "Bạn chưa nhập đủ dữ liệu", Toast.LENGTH_SHORT).show();
         } else {
             get_weight = Float.valueOf(weight.getText().toString());
